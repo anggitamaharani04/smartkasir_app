@@ -49,12 +49,12 @@ class _KelolaKaryawanPageState extends State<KelolaKaryawanPage> {
     await prefs.setInt('active_cashier_id', staf.id!);
     await prefs.setString('active_cashier_name', staf.namaKaryawan);
 
+    if (!mounted) return;
     setState(() {
       _activeCashierId = staf.id;
       _activeCashierName = staf.namaKaryawan;
     });
 
-    if (!mounted) return;
     ScaffoldMessenger.of(context).showSnackBar(
       SnackBar(
         content: Text('Kasir aktif giliran saat ini: "${staf.namaKaryawan}"'),
@@ -133,6 +133,10 @@ class _KelolaKaryawanPageState extends State<KelolaKaryawanPage> {
     } else if (peran == 'Admin') {
       bg = Colors.blue.shade100;
       fg = Colors.blue.shade900;
+    } else if (peran == 'Supervisor') {
+      // TANTANGAN 1: badge ungu untuk Supervisor
+      bg = Colors.purple.shade100;
+      fg = Colors.purple.shade900;
     } else {
       bg = Colors.green.shade100;
       fg = Colors.green.shade900;
