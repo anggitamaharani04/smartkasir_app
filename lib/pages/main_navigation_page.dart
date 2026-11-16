@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'dashboard_page.dart';
+import 'profil_toko_page.dart';
 
 // Halaman utama yang mengatur navigasi 4 menu SmartKasir
 class MainNavigationPage extends StatefulWidget {
@@ -25,16 +26,12 @@ class _MainNavigationPageState extends State<MainNavigationPage> {
     ),
     const Center(
       child: Text(
-        'Menu 3: Riwayat Penjualan & Laporan (Modul M12)',
+        'Menu 3: Riwayat Penjualan & Laporan (Modul M14)',
         style: TextStyle(fontSize: 16),
       ),
     ),
-    const Center(
-      child: Text(
-        'Menu 4: Profil Toko & Pengaturan (Modul M12)',
-        style: TextStyle(fontSize: 16),
-      ),
-    ),
+    // Tab Toko: Profil Toko & Kelola Karyawan (Modul M12)
+    const ProfilTokoPage(),
   ];
 
   @override
